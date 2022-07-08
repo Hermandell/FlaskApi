@@ -1,0 +1,3 @@
+ejecutar en entorno
+pip install pipdeptree  
+pipdeptree    
