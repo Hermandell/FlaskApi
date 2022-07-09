@@ -16,8 +16,8 @@ template = {
       # base bash for blueprint registration
     "schemes": [
         # Comento el http porque solo es para modo desarrollo 
-        "https"
-        "http",
+        "https",
+        "http"
     ],
     
 }
