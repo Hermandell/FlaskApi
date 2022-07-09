@@ -4,7 +4,7 @@ template = {
     "info": {
         # This is the information that will be displayed on the Swagger UI.
         "title": "ITNL API",
-        "description": "Esta es una API Open Source para impulsar del desarrollo de software en el área de sistemas, brindando la informacion necesaria para aquellas estudiantes quienes quieran utilizar los mismos datos de la institución para hacer mas profesional los proyectos escolares, Utiliza Web Scraping , y JWT",
+        "description": "Esta es una API Open Source para impulsar del desarrollo de software en el área de sistemas, brindando la informacion necesaria para aquellos estudiantes quienes quieran utilizar los mismos datos de la institución para hacer mas profesional los proyectos escolares, Utiliza Web Scraping , y JWT",
         "contact": {
             "responsibleOrganization": "",
             "responsibleDeveloper": "",
@@ -16,7 +16,7 @@ template = {
       # base bash for blueprint registration
     "schemes": [
         # Comento el http porque solo es para modo desarrollo 
-        "http",
+        #"http",
         "https"
     ],
     
