@@ -72,6 +72,11 @@ def user():
 def calificaciones():
     return myserver.cali()
 
+#Obtener la data sin seguridad
+@app.route('/all', methods=["POST"])
+@swag_from('./docs/todo.yaml')
+def todo():
+    return myserver.prueba()
 
 if __name__ == '__main__':
     app.run()
