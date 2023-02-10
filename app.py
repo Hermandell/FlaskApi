@@ -78,6 +78,11 @@ def calificaciones():
 def todo():
     return myserver.prueba()
 
+@app.route('/loginmaestro', methods=["POST"])
+@swag_from('./docs/Autenticacion/login.yaml')
+def loginmaestro():
+    return myserver.loginMaestros()
+
 if __name__ == '__main__':
     app.run()
 
