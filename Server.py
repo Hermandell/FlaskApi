@@ -9,6 +9,9 @@ from json import load, JSONDecodeError
 with open(r'shema.json') as f:
     schema = load(f)
 
+with open(r'shemaProfesor.json') as f:
+    schemaMaestro = load(f)
+
 class MyServer:
     def __init__(self):
         self.LoginUrl = ('https://itnleon.mindbox.app/login/autoriza-alumno')
@@ -30,7 +33,7 @@ class MyServer:
         except JSONDecodeError:
             return jsonify(({"response": "Error en credenciales"})), 500
         else:
-            validar = Draft7Validator(schema)
+            validar = Draft7Validator(schemaMaestro)
             errores = list(validar.iter_errors(data))
             #print(errores)
             # aqui va el if not
@@ -221,9 +224,10 @@ class MyServer:
         except JSONDecodeError:
             return jsonify(({"response": "Error en credenciales"})), 500
         else:
-            validar = Draft7Validator(schema)
+            validar = Draft7Validator(schemaMaestro)
             errores = list(validar.iter_errors(data))
-            #print(errores)
+            print("errores")
+            print(errores)
             # aqui va el if not
             user = data["user"]
             password = data["password"]

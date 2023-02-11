@@ -79,7 +79,7 @@ def todo():
     return myserver.prueba()
 
 @app.route('/loginmaestro', methods=["POST"])
-@swag_from('./docs/Autenticacion/login.yaml')
+@swag_from('./docs/Autenticacion/loginProfesor.yaml')
 def loginmaestro():
     return myserver.loginMaestros()
 

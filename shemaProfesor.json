@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+      "user": {
+        "type": "string",
+        "minimum": 1,
+        "maxLength": 17
+      },
+      "password": {
+        "type": "string",
+        "minimum": 1,
+        "maximum": 40
+      }
+    },
+    "required": ["user", "password"],
+    "additionalProperties": false
+}
