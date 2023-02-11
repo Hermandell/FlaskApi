@@ -83,6 +83,12 @@ def todo():
 def loginmaestro():
     return myserver.loginMaestros()
 
+@app.route('/usermaestros', methods=["GET"])
+@swag_from('./docs/dataMaestros.yaml')
+@token_required
+def usuariosmaestros():
+    return myserver.obtenerDataMaestro()
+
 if __name__ == '__main__':
     app.run()
 

@@ -300,3 +300,38 @@ class MyServer:
             }]),200
         return ({"response": "Falle"}),401
     
+    def obtenerDataMaestro(self):
+        s = self.sesion
+        profile = s.get(self.ProfileMaestro)
+        print("Error")
+        print(profile)
+        if profile.status_code == 200:
+            if profile.url != self.ProfileMaestro:
+                return ({"response": "Error de Usuario"}),401
+            ProfileHtml = BeautifulSoup(profile.text, "html.parser")
+            buscar_info = ProfileHtml.find_all('ul', {'class': 'simple'})
+            infoGeneral=buscar_info[0]
+            li_tagsGeneral = infoGeneral.find_all('li')
+            infoGeneralLista=list()
+            for i in li_tagsGeneral:
+                datos_generales = (i.find('span').text.strip())
+                infoGeneralLista.append(datos_generales)
+            infoEscolar=buscar_info[1]
+            li_tagseEscolar = infoEscolar.find_all('li')
+            infoEscolarLista=list()
+            for i in li_tagseEscolar:
+                datos_Escolares = (i.find('span').text.strip())
+                infoEscolarLista.append(datos_Escolares)
+            return jsonify([{ 
+                #"id": infoEscolarLista[0],
+                #Get first two word of the nombre
+                "nombre": infoGeneralLista[0],
+                "apellidos": infoGeneralLista[1],
+                #"curp": infoGeneralLista[2],
+                #Se pudiera usar como ID unico tambien la matricula
+                #"curp": infoGeneralLista[1],
+                #"fechanacimiento": infoGeneralLista[2],
+                #"correo": infoGeneralLista[6],
+                #"sexo": infoGeneralLista[3]
+            }]),200
+        return ({"response": "Falle"}),401

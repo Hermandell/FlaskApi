@@ -13,7 +13,7 @@ parameters:
         - "user"
         - "password"
       properties:
-        ncontrol:
+        user:
           type: "string"
           example: "ABC*****"
         password:
