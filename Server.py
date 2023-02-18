@@ -33,7 +33,7 @@ class MyServer:
         except JSONDecodeError:
             return jsonify(({"response": "Error en credenciales"})), 500
         else:
-            validar = Draft7Validator(schemaMaestro)
+            validar = Draft7Validator(schema)
             errores = list(validar.iter_errors(data))
             #print(errores)
             # aqui va el if not
